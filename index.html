@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Photography portfolio — kumpulan cerita dalam setiap frame.">
+  <title>Frame by Frame — Photography Portfolio</title>
+  <style>
+    :root {
+      --paper: #f7f5f0;
+      --ink: #262522;
+      --muted: #77736b;
+      --line: #dedbd3;
+      --accent: #8a7968;
+      --white: #fffefa;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: auto; }
+    header {
+      height: 76px; display: flex; align-items: center;
+      justify-content: space-between; border-bottom: 1px solid var(--line);
+    }
+    .brand { font-family: Georgia, serif; font-size: 21px; letter-spacing: .04em; }
+    nav { display: flex; gap: 28px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    nav a:hover { color: var(--accent); }
+    .hero { padding: 94px 0 76px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+    .eyebrow { color: var(--accent); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; }
+    h1 { font: 400 clamp(48px, 7vw, 82px)/1.02 Georgia, serif; letter-spacing: -.045em; margin: 20px 0; }
+    .hero p { color: var(--muted); max-width: 410px; font-size: 15px; }
+    .hero-image { width: 100%; height: 440px; object-fit: cover; display: block; }
+    .text-link { display: inline-block; margin-top: 20px; padding-bottom: 5px; border-bottom: 1px solid var(--ink); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+    section { padding: 50px 0 80px; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; margin-bottom: 28px; }
+    h2 { font: 400 38px/1.1 Georgia, serif; margin: 8px 0 0; }
+    .section-note { color: var(--muted); font-size: 13px; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .photo { margin: 0; cursor: pointer; }
+    .photo img { width: 100%; height: 330px; object-fit: cover; display: block; background: #e8e4dc; transition: opacity .25s; }
+    .photo:hover img { opacity: .86; }
+    .photo figcaption { display: flex; justify-content: space-between; gap: 10px; padding-top: 10px; font-size: 12px; }
+    .photo figcaption span:last-child { color: var(--muted); }
+    .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 72px 0; }
+    .about p { color: var(--muted); max-width: 570px; margin: 0; }
+    .contact { text-align: center; padding: 90px 0; }
+    .contact h2 { font-size: clamp(38px, 6vw, 62px); }
+    .contact p { color: var(--muted); }
+    .contact .text-link { margin-top: 12px; }
+    footer { border-top: 1px solid var(--line); padding: 22px 0; color: var(--muted); font-size: 11px; display: flex; justify-content: space-between; gap: 16px; }
+    .viewer { display: none; position: fixed; inset: 0; z-index: 5; background: rgba(20,19,17,.92); align-items: center; justify-content: center; padding: 24px; }
+    .viewer.open { display: flex; }
+    .viewer img { max-width: min(100%, 1000px); max-height: 85vh; object-fit: contain; }
+    .close { position: absolute; top: 22px; right: 28px; border: 0; background: none; color: white; font-size: 32px; cursor: pointer; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      header { height: auto; padding: 20px 0; align-items: flex-start; gap: 16px; flex-direction: column; }
+      nav { gap: 18px; flex-wrap: wrap; font-size: 10px; }
+      .hero { padding: 62px 0 50px; grid-template-columns: 1fr; gap: 30px; }
+      .hero-image { height: 340px; }
+      section { padding: 38px 0 58px; }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .photo img { height: 230px; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .about { grid-template-columns: 1fr; gap: 18px; padding: 52px 0; }
+      footer { flex-direction: column; }
+    }
+    @media (max-width: 430px) {
+      .gallery { grid-template-columns: 1fr; }
+      .photo img { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <!-- Ganti nama brand di bawah ini sesuai nama portofoliomu -->
+      <a class="brand" href="#">your.frame</a>
+      <nav>
+        <a href="#work">Works</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Photographer · Visual storyteller</div>
+          <h1>Stories<br>in every<br>frame.</h1>
+          <p>Melihat hal-hal sederhana dengan sudut pandang yang berbeda. Sebuah ruang untuk menyimpan cerita, cahaya, dan momen melalui fotografi.</p>
+          <a class="text-link" href="#work">Explore selected works ↘</a>
+        </div>
+        <!-- Ganti URL gambar ini dengan foto pilihanmu -->
+        <img class="hero-image" src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1200&q=85" alt="Pemandangan alam dengan cahaya pagi">
+      </div>
+
+      <section id="work">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">A visual journal</div>
+            <h2>Selected works</h2>
+          </div>
+          <div class="section-note">A collection of moments & perspectives · 2024—2026</div>
+        </div>
+        <div class="gallery">
+          <!-- Ganti gambar, judul, dan kategori sesuai karya fotomu -->
+          <figure class="photo"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="Danau dan pegunungan"><figcaption><span>Quiet Escape</span><span>Landscape</span></figcaption></figure>
+          <figure class="photo"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85" alt="Potret editorial"><figcaption><span>Soft Portrait</span><span>Portrait</span></figcaption></figure>
+          <figure class="photo"><img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=85" alt="Suasana sinematik"><figcaption><span>After Hours</span><span>Street</span></figcaption></figure>
+          <figure class="photo"><img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=900&q=85" alt="Cahaya matahari di alam"><figcaption><span>Golden Light</span><span>Nature</span></figcaption></figure>
+          <figure class="photo"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Perjalanan di alam"><figcaption><span>Somewhere</span><span>Travel</span></figcaption></figure>
+          <figure class="photo"><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85" alt="Ombak laut"><figcaption><span>Blue Notes</span><span>Seascape</span></figcaption></figure>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div>
+          <div class="eyebrow">A little introduction</div>
+          <h2>Behind<br>the lens.</h2>
+        </div>
+        <p>Hi, I'm [Nama Kamu] — a photographer who loves capturing stories through light, details, and everyday moments. Bagiku, fotografi bukan hanya tentang mengambil gambar, tetapi juga tentang menyimpan rasa dan sudut pandang dalam satu frame. <br><br>Based in Indonesia. Available for creative collaborations.</p>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="eyebrow">Let's create something</div>
+        <h2>Have a story<br>to tell?</h2>
+        <p>Untuk kolaborasi, proyek, atau sekadar menyapa, hubungi aku melalui email.</p>
+        <!-- Ganti alamat email di href dan tulisan email -->
+        <a class="text-link" href="mailto:emailkamu@example.com">emailkamu@example.com ↗</a>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 your.frame — Photography Portfolio</span>
+      <span>Made with curiosity & light.</span>
+    </footer>
+  </div>
+
+  <div class="viewer" id="viewer" aria-label="Pratinjau foto">
+    <button class="close" id="closeViewer" aria-label="Tutup">&times;</button>
+    <img id="viewerImage" src="" alt="Foto ukuran besar">
+  </div>
+
+  <script>
+    // Klik foto untuk melihat ukuran lebih besar.
+    const viewer = document.getElementById('viewer');
+    const viewerImage = document.getElementById('viewerImage');
+    document.querySelectorAll('.photo img').forEach((photo) => {
+      photo.addEventListener('click', () => {
+        viewerImage.src = photo.src;
+        viewer.classList.add('open');
+      });
+    });
+    document.getElementById('closeViewer').addEventListener('click', () => {
+      viewer.classList.remove('open');
+      viewerImage.src = '';
+    });
+    viewer.addEventListener('click', (event) => {
+      if (event.target === viewer) {
+        viewer.classList.remove('open');
+        viewerImage.src = '';
+      }
+    });
+  </script>
+</body>
+</html>
